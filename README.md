@@ -1,7 +1,7 @@
 # NetSphere: Enterprise Network Operations, Protocol Engineering & Telemetry Platform
 
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-blue.svg)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-Proprietary-red.svg)](#license)
 [![Codebase Size](https://img.shields.io/badge/LOC-60%2C000%2B-blueviolet.svg)](#codebase-metrics)
 [![Build](https://img.shields.io/badge/Tests-36%20Passed-brightgreen.svg)](#testing)
 
@@ -144,4 +144,4 @@ python -m netsphere.cli trace 127.0.0.1 -m 15
 ---
 
 ## License
-Apache License 2.0. Copyright (c) NetSphere Authors.
+Proprietary software. All rights reserved. Copyright (c) NetSphere Authors.

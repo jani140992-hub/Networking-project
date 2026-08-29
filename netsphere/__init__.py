@@ -14,7 +14,7 @@ A comprehensive modular Python networking suite providing:
 
 __version__ = "1.0.0"
 __author__ = "NetSphere Engineering Team"
-__license__ = "Apache-2.0"
+__license__ = "Proprietary"
 
 from netsphere.core.types import IPv4Address, IPv6Address, MACAddress, Port, CIDRNetwork
 from netsphere.core.buffer import PacketBuffer

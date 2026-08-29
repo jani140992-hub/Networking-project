@@ -81,7 +81,7 @@ Default: `http://127.0.0.1:8080/api`
       "status": "open",
       "service": "http",
       "rtt_ms": 1.25,
-      "banner": "Apache/2.4.51"
+      "banner": "NetSphere-Web/1.0"
     },
     {
       "port": 23,
