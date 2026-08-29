@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "netsphere"
+version = "1.0.0"
+description = "Enterprise Network Operations, Protocol Engineering & Telemetry Platform"
+readme = "README.md"
+authors = [{ name = "NetSphere Engineering Team" }]
+license = { text = "Apache-2.0" }
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Topic :: System :: Networking",
+    "Topic :: System :: Networking :: Monitoring",
+    "Topic :: Security",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+keywords = [
+    "networking", "protocols", "tcp", "ip", "dns", "dhcp", "bgp", "ospf",
+    "simulation", "sdn", "nat", "scanner", "telemetry", "netflow", "wireshark"
+]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+netsphere = "netsphere.cli:main"

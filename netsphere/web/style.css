@@ -1,0 +1,67 @@
+/* NetSphere Modern NOC Dark Theme */
+:root {
+  --bg-dark: #0f172a;
+  --bg-card: #1e293b;
+  --bg-hover: #334155;
+  --accent: #38bdf8;
+  --accent-hover: #0284c7;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: #334155;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace; }
+
+body { background: var(--bg-dark); color: var(--text-main); height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+
+.top-nav { height: 60px; background: var(--bg-card); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 24px; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand h1 { font-size: 1.25rem; font-weight: 700; color: var(--text-main); }
+.badge { background: var(--border); font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; color: var(--accent); }
+.system-telemetry { display: flex; align-items: center; gap: 20px; }
+.telem-item { font-size: 0.85rem; }
+.telem-item .label { color: var(--text-muted); }
+.telem-item .val { color: var(--accent); font-weight: 600; }
+.status-indicator { font-size: 0.75rem; font-weight: 600; padding: 4px 10px; border-radius: 12px; }
+.status-indicator.online { background: rgba(34, 197, 94, 0.2); color: var(--success); }
+
+.main-layout { display: flex; flex: 1; overflow: hidden; }
+.sidebar { width: 240px; background: var(--bg-card); border-right: 1px solid var(--border); padding: 16px 8px; }
+.sidebar nav { display: flex; flex-direction: column; gap: 6px; }
+.nav-item { background: transparent; border: none; color: var(--text-muted); text-align: left; padding: 12px 16px; border-radius: 8px; cursor: pointer; font-size: 0.9rem; transition: all 0.2s; }
+.nav-item:hover, .nav-item.active { background: var(--bg-hover); color: var(--text-main); }
+.nav-item.active { border-left: 3px solid var(--accent); }
+
+.content-area { flex: 1; padding: 24px; overflow-y: auto; }
+.view-panel { display: none; flex-direction: column; gap: 20px; }
+.view-panel.active { display: flex; }
+
+.panel-header { display: flex; justify-content: space-between; align-items: center; }
+.panel-header h2 { font-size: 1.4rem; font-weight: 600; }
+
+.btn { background: var(--bg-hover); color: var(--text-main); border: 1px solid var(--border); padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 500; }
+.btn-primary { background: var(--accent); color: var(--bg-dark); border: none; font-weight: 600; }
+.btn-primary:hover { background: var(--accent-hover); }
+
+.canvas-container { background: #090d16; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; display: flex; justify-content: center; }
+#topo-canvas { width: 100%; height: 520px; }
+
+.inspector-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; height: 500px; }
+.tree-panel, .hex-panel { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.tree-container { overflow-y: auto; font-family: monospace; font-size: 0.85rem; line-height: 1.6; }
+.tree-node { padding: 4px 8px; border-radius: 4px; }
+.tree-node:hover { background: var(--bg-hover); }
+.tree-node.layer { font-weight: 600; color: var(--accent); }
+.hex-view { font-family: monospace; font-size: 0.8rem; line-height: 1.4; color: #a5f3fc; overflow-y: auto; flex: 1; }
+
+.diag-forms { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; }
+.form-group { display: flex; gap: 10px; margin: 16px 0; }
+.form-group input, .search-input { flex: 1; background: var(--bg-dark); border: 1px solid var(--border); padding: 10px 14px; border-radius: 6px; color: #fff; }
+.data-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 0.85rem; }
+.data-table th, .data-table td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+.data-table th { color: var(--text-muted); }
+.charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }

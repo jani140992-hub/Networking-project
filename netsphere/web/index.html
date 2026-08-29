@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NetSphere - Enterprise Network Operations Center</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top-nav">
+    <div class="brand">
+      <span class="logo-icon">🌐</span>
+      <h1>NetSphere NOC</h1>
+      <span class="badge">v1.0.0</span>
+    </div>
+    <div class="system-telemetry">
+      <div class="telem-item"><span class="label">PPS:</span> <span id="pps-val" class="val">1,420</span></div>
+      <div class="telem-item"><span class="label">Throughput:</span> <span id="mbps-val" class="val">11.4 Mbps</span></div>
+      <div class="telem-item"><span class="label">Latency:</span> <span id="lat-val" class="val">1.2 ms</span></div>
+      <div class="status-indicator online">ONLINE</div>
+    </div>
+  </header>
+
+  <div class="main-layout">
+    <aside class="sidebar">
+      <nav>
+        <button class="nav-item active" data-tab="topology">🗺️ Topology Canvas</button>
+        <button class="nav-item" data-tab="inspector">🔍 Packet Inspector</button>
+        <button class="nav-item" data-tab="diagnostics">⚡ Diagnostics & Scan</button>
+        <button class="nav-item" data-tab="telemetry">📈 Real-time Telemetry</button>
+        <button class="nav-item" data-tab="catalog">📚 Port & RFC Catalog</button>
+      </nav>
+    </aside>
+
+    <main class="content-area">
+      <!-- Topology View -->
+      <section id="view-topology" class="view-panel active">
+        <div class="panel-header">
+          <h2>Network Topology Simulation Canvas</h2>
+          <div class="actions">
+            <button id="btn-add-node" class="btn">+ Add Node</button>
+            <button id="btn-send-packet" class="btn btn-primary">▶ Simulate Packet Flow</button>
+          </div>
+        </div>
+        <div class="canvas-container">
+          <canvas id="topo-canvas" width="900" height="500"></canvas>
+        </div>
+      </section>
+
+      <!-- Packet Inspector -->
+      <section id="view-inspector" class="view-panel">
+        <div class="panel-header">
+          <h2>Wireshark-Style Multi-Layer Packet Dissector</h2>
+        </div>
+        <div class="inspector-grid">
+          <div class="tree-panel">
+            <h3>Protocol Frame Tree</h3>
+            <div id="packet-tree" class="tree-container"></div>
+          </div>
+          <div class="hex-panel">
+            <h3>Hexadecimal Wire Dump</h3>
+            <pre id="hex-dump" class="hex-view"></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Diagnostics View -->
+      <section id="view-diagnostics" class="view-panel">
+        <div class="panel-header">
+          <h2>Diagnostics & Security Scanner</h2>
+        </div>
+        <div class="diag-forms">
+          <div class="card">
+            <h3>Port Scanner</h3>
+            <div class="form-group">
+              <input type="text" id="scan-target" value="127.0.0.1" placeholder="Target Host">
+              <button id="btn-run-scan" class="btn btn-primary">Run Scan</button>
+            </div>
+            <table class="data-table" id="scan-results-table">
+              <thead><tr><th>Port</th><th>Status</th><th>Service</th><th>Latency</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div class="card">
+            <h3>ICMP / TCP Ping Probe</h3>
+            <div class="form-group">
+              <input type="text" id="ping-target" value="127.0.0.1" placeholder="Ping Target">
+              <button id="btn-run-ping" class="btn">Send Probes</button>
+            </div>
+            <div id="ping-stats-box" class="stats-box"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Telemetry View -->
+      <section id="view-telemetry" class="view-panel">
+        <div class="panel-header">
+          <h2>Live NetFlow & Interface Telemetry</h2>
+        </div>
+        <div class="charts-grid">
+          <div class="card"><canvas id="chart-throughput" width="400" height="220"></canvas></div>
+          <div class="card"><canvas id="chart-latency" width="400" height="220"></canvas></div>
+        </div>
+      </section>
+
+      <!-- Catalog View -->
+      <section id="view-catalog" class="view-panel">
+        <div class="panel-header">
+          <h2>IANA Service Ports & RFC Registry</h2>
+        </div>
+        <input type="text" id="catalog-search" placeholder="Search ports (e.g. 443, HTTPS, SSH)..." class="search-input">
+        <div id="catalog-results" class="catalog-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="charts.js"></script>
+  <script src="topology.js"></script>
+  <script src="inspector.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
