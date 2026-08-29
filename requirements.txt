@@ -1,0 +1,6 @@
+# NetSphere Core Dependencies
+# The NetSphere platform is self-contained and implemented in pure standard-library Python 3.
+# Optional extensions for production deployment:
+# uvicorn>=0.20.0
+# fastapi>=0.95.0
+# scapy>=2.5.0

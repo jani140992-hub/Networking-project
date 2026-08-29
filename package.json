@@ -1,0 +1,23 @@
+{
+  "name": "netsphere-noc-dashboard",
+  "version": "1.0.0",
+  "description": "NetSphere Enterprise Network Operations, Protocol Engineering & Telemetry Platform",
+  "main": "netsphere/web/app.js",
+  "scripts": {
+    "start": "python main.py --host 127.0.0.1 --port 8080",
+    "test": "python -m unittest discover tests",
+    "build": "python setup.py build",
+    "demo": "python scripts/run_demo.py",
+    "audit": "python scripts/loc_counter.py"
+  },
+  "keywords": [
+    "networking",
+    "sdn",
+    "protocols",
+    "telemetry",
+    "wireshark",
+    "packet-inspector"
+  ],
+  "author": "NetSphere Engineering Team",
+  "license": "Apache-2.0"
+}
